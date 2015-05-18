@@ -66,9 +66,7 @@ function serialDevicesPopulated(ports){
 // SEND DATA TO SP
 function start(port){
     console.log("Finializing SP Connection");
-    port.on('data', function(){
-	gotData();
-    });
+    port.on('data', gotData);
     sp = port;
     console.log("Setting Full Speed");
     sp.send(fullSpeed);
